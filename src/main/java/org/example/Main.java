@@ -12,7 +12,14 @@ public class Main {
         taskManager.addTask(task3);
         taskManager.getAllTasks();
         System.out.println();
-        taskManager.removeTaskById(2);
-        taskManager.getAllTasks();
+
+        taskManager.fillterTask(Status.DONE);
+        taskManager.fillterTask(Status.NEW);
+
+        taskManager.changeStatusById(2, Status.DONE);
+
+        taskManager.fillterTask(Status.DONE);
+        taskManager.fillterTask(Status.NEW);
+
     }
 }

@@ -22,4 +22,20 @@ public class TaskManager {
             System.out.println(task);
         }
     }
+
+    public void fillterTask(Status status){
+        for(Task task : taskList){
+            if(task.getStatus().equals(status)){
+                System.out.println(task);
+            }
+        }
+    }
+
+    public void changeStatusById(int id, Status newStatus){
+        for(Task task : taskList){
+            if(task.getId() == id){
+                task.setStatus(newStatus);
+            }
+        }
+    }
 }
