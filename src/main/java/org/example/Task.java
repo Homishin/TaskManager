@@ -45,6 +45,6 @@ public class Task {
     }
 
     public String toString() {
-        return "ID: " + id + ", Title: " + title + ", Description: " + description + ", Status: " + status;
+        return "ID: " + id + ", Название: " + title + ", Описание: " + description + ", Статус: " + status;
     }
 }
