@@ -1,25 +1,48 @@
 package org.example;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         TaskManager taskManager = new TaskManager();
-        Task task1 = new Task(1, "Подрочить", "Сегодня левой", Status.DONE);
-        Task task2 = new Task(2, "Подрочить в обед", "Сегодня правой", Status.NEW);
-        Task task3 = new Task(3, "Подрочить перед сном", "Двумя", Status.IN_PROGRESS);
+        Scanner scanner = new Scanner(System.in);
 
-        taskManager.addTask(task1);
-        taskManager.addTask(task2);
-        taskManager.addTask(task3);
-        taskManager.getAllTasks();
-        System.out.println();
+        boolean runProgramm = true;
+        int taskCount = 0;
 
-        taskManager.fillterTask(Status.DONE);
-        taskManager.fillterTask(Status.NEW);
+        while (runProgramm) {
+            System.out.println("Выберите действие:\n" +
+                    "1. Добавить задачу\n" +
+                    "2. Удалить задачу\n" +
+                    "3. Показать задачи по статусу\n" +
+                    "4. Обновить статус задачи\n" +
+                    "5. Показать все задачи\n" +
+                    "6. Выйти");
+            int x = scanner.nextInt();
+            switch (x) {
+                case 1:
+                    taskCount += 1;
+                    int id = taskCount;
+                    System.out.println("Название задачи:");
+                    String title = scanner.next();
+                    System.out.println("Описание");
+                    String description = scanner.next();
 
-        taskManager.changeStatusById(2, Status.DONE);
+                    Task task = new Task(id,title,description,Status.NEW);
+                    taskManager.addTask(task);
+                    break;
+                    case 2:
+                        System.out.println("ID задачи");
+                        int idTask = scanner.nextInt();
+                        taskManager.removeTaskById(idTask);
+                        break;
+                        case 5:
+                            taskManager.getAllTasks();
+                            break;
 
-        taskManager.fillterTask(Status.DONE);
-        taskManager.fillterTask(Status.NEW);
+
+            }
+        }
 
     }
 }
