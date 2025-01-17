@@ -40,7 +40,4 @@ public class TaskManager {
         }
     }
 
-    public void kirillSoset(String tipOtsosa){
-        System.out.println(tipOtsosa);
-    }
 }
