@@ -1,5 +1,6 @@
 package org.example;
 
+
 import java.util.ArrayList;
 
 public class TaskManager {
@@ -37,5 +38,9 @@ public class TaskManager {
                 task.setStatus(newStatus);
             }
         }
+    }
+
+    public void kirillSoset(String tipOtsosa){
+        System.out.println(tipOtsosa);
     }
 }
